@@ -562,8 +562,11 @@ function delHist(i){if(confirm('Delete?')){hist.splice(i,1);localStorage.setItem
 
 // Wire up all buttons after DOM ready
 document.addEventListener("DOMContentLoaded", function() {
+
   document.getElementById('qDate').value = todayStr();
-  // getQuoteNo();
+
+  // getQuoteNo();   // keep disabled for now
+
   redrawRows();
 
   document.getElementById('addBtn').onclick = function() {
@@ -571,6 +574,7 @@ document.addEventListener("DOMContentLoaded", function() {
     redrawRows();
     openModal(rows.length - 1);
   };
+
   document.getElementById('previewBtn').onclick = doPreview;
   document.getElementById('resetBtn').onclick = doReset;
   document.getElementById('pdfBtn').onclick = doPDF;
@@ -579,8 +583,8 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById('editBtn').onclick = function(){ goTab('q'); };
   document.getElementById('mcloseBtn').onclick = closeModal;
   document.getElementById('overlay').onclick = closeModal;
-  document.getElementById('msearch').oninput = function() { drawModalList(this.value); };
+  document.getElementById('msearch').oninput = function() {
+    drawModalList(this.value);
+  };
+
 });
-</script>
-</body>
-</html>
