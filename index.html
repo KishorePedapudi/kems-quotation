@@ -229,7 +229,7 @@ var rows = [];
 var hist = JSON.parse(localStorage.getItem('kemsH') || '[]');
 var editRowIdx = -1;
 
-async function getQuoteNo(){
+async function // getQuoteNo(){
 
   const response =
     await fetch(
@@ -533,7 +533,7 @@ function doReset() {
   document.getElementById('cAddr').value='';
   document.getElementById('cType').selectedIndex=0;
   document.getElementById('qBy').value='';
-  getQuoteNo();
+  // getQuoteNo();
   document.getElementById('qDate').value = todayStr();
   document.getElementById('pdfWrap').style.display='none';
   redrawRows();
@@ -564,7 +564,7 @@ function delHist(i){if(confirm('Delete?')){hist.splice(i,1);localStorage.setItem
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementById('qDate').value = todayStr();
 }
-  getQuoteNo();
+  // getQuoteNo();
   redrawRows();
 
   document.getElementById('addBtn').onclick = function() {
