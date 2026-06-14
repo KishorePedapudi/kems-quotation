@@ -527,7 +527,7 @@ function doReset() {
   document.getElementById('cAddr').value='';
   document.getElementById('cType').selectedIndex=0;
   document.getElementById('qBy').value='';
-  // getQuoteNo();
+  getQuoteNo();
   document.getElementById('qDate').value = todayStr();
   document.getElementById('pdfWrap').style.display='none';
   redrawRows();
@@ -559,7 +559,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.getElementById('qDate').value = todayStr();
 
-  // getQuoteNo();   // keep disabled for now
+  getQuoteNo();   // keep disabled for now
 
   redrawRows();
 
