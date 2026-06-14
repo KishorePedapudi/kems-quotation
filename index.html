@@ -225,31 +225,25 @@ var PRODUCTS = [
 var rows = [];
 var hist = JSON.parse(localStorage.getItem('kemsH') || '[]');
 var editRowIdx = -1;
-var rows = [];
-var hist = JSON.parse(localStorage.getItem('kemsH') || '[]');
-var editRowIdx = -1;
 
-async function // getQuoteNo(){
+async function getQuoteNo(){
 
-  const response =
-    await fetch(
-      SCRIPT_URL +
-      "?action=getNextQuoteNo"
-    );
+  const response = await fetch(
+    SCRIPT_URL + "?action=getNextQuoteNo"
+  );
 
-  const data =
-    await response.json();
+  const data = await response.json();
 
   document.getElementById("qNo").value =
     data.quoteNo;
 }
 
 function fmt(n) {
-
-function fmt(n) {
-  return 'Rs.' + parseFloat(n).toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2});
+  return 'Rs.' + parseFloat(n).toLocaleString('en-IN', {
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  });
 }
-
 function todayStr() {
   var d = new Date();
   var dd = ('0'+d.getDate()).slice(-2);
